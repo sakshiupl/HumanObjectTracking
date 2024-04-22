@@ -34,7 +34,7 @@ To utilize this tracking system, users are required to clone the repository and 
 
 
 2. Ensure you meet all prerequisites: 
-   Python version 3.8 or newer with all dependencies listed in [requirements.txt], including torch>=1.7.
+   Python version 3.8 or newer with all dependencies listed in requirements.txt
    To install them, execute the following command:
    
 `pip install -r requirements.txt`
@@ -82,9 +82,6 @@ $ python track.py --source 0 --strong-sort-weights osnet_x0_25_market1501.pt
                                                    ...
 ```
 
-## Running the Tracker
-
-The tracker can be executed with simple command-line instructions, specifying the source and desired models for detection and ReID. 
 
 ## Filter tracked classes
 
@@ -96,7 +93,7 @@ To track a specific subset of MS COCO classes, append their respective indices a
 
 
 ```bash
-python track.py --source 0 --yolo-weights yolov7.pt --classes 16 17  # tracks cats and dogs, only
+python track.py --source 0 --yolo-weights yolov7.pt --classes 19 20  # tracks horse and sheep only
 ```
 
 You can find a comprehensive list of all the objects detectable by a Yolov7 model trained on MS COCO here (https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/). 
@@ -109,3 +106,7 @@ You can save MOT-compliant results to your experiment folder at `runs/track/<yol
 ```bash
 python track.py --source ... --save-txt
 ```
+
+## Code Understanding
+
+
