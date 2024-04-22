@@ -107,7 +107,3 @@ You can save MOT-compliant results to your experiment folder at `runs/track/<yol
 ```bash
 python track.py --source ... --save-txt
 ```
-
-## Code Understanding
-
-
