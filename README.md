@@ -1,4 +1,11 @@
 # Human Object Tracking 
+
+## Introduction
+
+In the realm of computer vision, object tracking stands as a crucial application, pivotal in realms ranging from surveillance to autonomous driving. This project harnesses the power of state-of-the-art models, integrating YOLOv7 for object detection with StrongSORT and OSNet for robust and precise object tracking. The integration aims to enhance tracking accuracy and real-time performance, making it particularly valuable in scenarios where human object tracking is critical.
+
+Our approach leverages YOLOv7 for its exceptional capability in detecting objects with high accuracy and speed. For the tracking component, we employ StrongSORT, which enhances the SORT (Simple Online and Realtime Tracking) algorithm by integrating more powerful features and association metrics. To further boost the tracking performance, OSNet is utilized for its cutting-edge deep learning architecture designed for re-identifying objects, ensuring that the tracked subjects are followed accurately across different frames, even in challenging conditions.
+
 ## Yolov7 + StrongSORT with OSNet
 
 <div align="center">
@@ -10,14 +17,16 @@
 
 </div>
 
+## Technical Architecture and Implementation
 
-## Introduction
+This project employs a sophisticated blend of technologies to achieve high-performance human object tracking. At the core of this system is the YOLOv7 model, known for its precision and speed in object detection. The model allows users to select from various configurations, balancing between inference speed and accuracy to cater to diverse application needs. This flexibility ensures optimal performance across different computational environments and real-time requirements.
 
-In the realm of computer vision, object tracking stands as a crucial application, pivotal in realms ranging from surveillance to autonomous driving. This project harnesses the power of state-of-the-art models, integrating YOLOv7 for object detection with StrongSORT and OSNet for robust and precise object tracking. The integration aims to enhance tracking accuracy and real-time performance, making it particularly valuable in scenarios where human object tracking is critical.
+Complementing the detection capabilities of YOLOv7, the StrongSORT algorithm, integrated with OSNet models for Re-Identification (ReID), ensures continuous and accurate tracking of objects even in densely populated scenes. The ReID models, available from a curated model zoo, can be chosen based on the specific demands of the tracking task, enhancing the robustness of the identity tracking across various scenarios.
 
-Our approach leverages YOLOv7 for its exceptional capability in detecting objects with high accuracy and speed. For the tracking component, we employ StrongSORT, which enhances the SORT (Simple Online and Realtime Tracking) algorithm by integrating more powerful features and association metrics. To further boost the tracking performance, OSNet is utilized for its cutting-edge deep learning architecture designed for re-identifying objects, ensuring that the tracked subjects are followed accurately across different frames, even in challenging conditions.
+## Setup and Usage
 
-## Before running the tracker
+To utilize this tracking system, users are required to clone the repository and install dependencies, ensuring a seamless setup with Python 3.8 or later. The system supports tracking from multiple sources including webcams, static images, video files, directories, glob patterns, YouTube videos, and even live streams via RTSP, RTMP, or HTTP. This versatility is crucial for deployment in diverse environments, from academic research to industrial applications.
+
 
 1. We can clone the repository recursively:
 
@@ -30,10 +39,7 @@ Our approach leverages YOLOv7 for its exceptional capability in detecting object
    
 `pip install -r requirements.txt`
 
-
-## Tracking sources
-
-Tracking can be run on most video formats
+3. Tracking can be run on most video formats
 
 ```bash
 $ python track.py --source 0  # webcam
@@ -76,10 +82,15 @@ $ python track.py --source 0 --strong-sort-weights osnet_x0_25_market1501.pt
                                                    ...
 ```
 
+## Running the Tracker
+
+The tracker can be executed with simple command-line instructions, specifying the source and desired models for detection and ReID. 
 
 ## Filter tracked classes
 
 By default, the tracker monitors all MS COCO classes.
+
+The users can also filter the tracked object classes to focus on specific entities, like animals or vehicles. This functionality is particularly useful in specialized tracking applications where only certain object classes are of interest.
 
 To track a specific subset of MS COCO classes, append their respective indices after the classes flag.
 
