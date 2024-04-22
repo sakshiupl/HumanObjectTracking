@@ -3,7 +3,7 @@
 
 <div align="center">
 <p>
-<img src="MOT16_eval/track_pedestrians.gif" width="400"/> <img src="MOT16_eval/track_all.gif" width="400"/> 
+<img src="TrackingContent/track_pedestrians.gif" width="400"/> <img src="TrackingContent/track_all.gif" width="400"/> 
 </p>
 <br>  
 </div>
@@ -89,9 +89,8 @@ You can find a comprehensive list of all the objects detectable by a Yolov7 mode
 Note that the indexing for classes in this repository begins at zero.
 
 
-## Save MOT-Compliant Results
-You can save MOT-compliant results to your experiment folder at `runs/track/<yolo_model>_<deep_sort_model>/`
-using the following command:
+## Save Multiple Object Tracking Compliant Results
+You can save MOT-compliant results to your experiment folder at `runs/track/<yolo_model>_<deep_sort_model>/` using the following command:
 
 ```bash
 python track.py --source ... --save-txt
