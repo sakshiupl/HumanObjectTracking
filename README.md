@@ -22,7 +22,8 @@ This repository contains a highly configurable two-stage-tracker that adjusts to
 `git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet.git`
 
 
-2. Ensure you meet all prerequisites: Python version 3.8 or newer with all dependencies listed in [requirements.txt], including torch>=1.7.
+2. Ensure you meet all prerequisites: 
+   Python version 3.8 or newer with all dependencies listed in [requirements.txt], including torch>=1.7.
    To install them, execute the following command:
    
 `pip install -r requirements.txt`
