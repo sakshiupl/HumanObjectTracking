@@ -13,6 +13,7 @@ Our approach leverages YOLOv7 for its exceptional capability in detecting object
 <img src="TrackingContent/Track_Horse.png" width="400" height="225"/> <img src="TrackingContent/track_all.gif" width="400" /> 
 </p>
 <br>  
+<a href="https://colab.research.google.com/drive/101f0PNBPx3245Hu710QAf2LXpf3E2uIk?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 </div>
 
 </div>
