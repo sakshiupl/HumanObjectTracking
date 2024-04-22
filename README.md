@@ -3,7 +3,7 @@
 
 <div align="center">
 <p>
-<img src="TrackingContent/Track_Horse.png" width="400" /> <img src="TrackingContent/track_all.gif" width="400" /> 
+<img src="TrackingContent/Track_Horse.png" width="400" height="225"/> <img src="TrackingContent/track_all.gif" width="400" /> 
 </p>
 <br>  
 </div>
