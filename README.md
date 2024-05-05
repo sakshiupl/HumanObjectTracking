@@ -108,7 +108,7 @@ You can save MOT-compliant results to your experiment folder at `runs/track/<yol
 python track.py --source ... --save-txt
 ```
 
-## Implementation Steps Followed
+## Implementation Steps
 
 1. Firstly, the repositories with OSNet, YOLOv7 models are cloned and then all the required dependencies are installed individually. Below are the steps that are followed to do the same.
 
