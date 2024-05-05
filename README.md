@@ -107,3 +107,60 @@ You can save MOT-compliant results to your experiment folder at `runs/track/<yol
 ```bash
 python track.py --source ... --save-txt
 ```
+
+## Implementation Steps Followed
+
+1. Firstly, the repositories with OSNet, YOLOv7 models are cloned and then all the required dependencies are installed individually. Below are the steps that are followed to do the same.
+
+```bash
+!git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet.git  # clone repo
+%pip install -qr requirements.txt  # install dependencies
+
+import torch
+from IPython.display import Image, clear_output  # to display images
+
+clear_output()
+print(f"Setup complete. Using torch {torch.__version__} ({torch.cuda.get_device_properties(0).name if torch.cuda.is_available() else 'CPU'})")
+```
+
+2. The test video is then fetched , initially the video is trimmed down to 2 seconds so that the processing time of the model can be accordingly minimized.
+
+```bash
+# get yolov5m model trained on the crowd-human dataset
+!wget -nc https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt -O /content/Yolov7_StrongSORT_OSNet/yolov7.pt
+
+# get the test video from the repo
+!wget -nc https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet/releases/download/v.2.0/test.avi
+# extract 3 seconds worth of video frames of it
+!yes | ffmpeg -ss 00:00:00 -i test.avi -t 00:00:02 -c copy out.avi
+```
+
+3. The already prepared models are then used on the video , which has been extracted in the previous step.
+
+```bash
+!python track.py --yolo-weights /content/Yolov7_StrongSORT_OSNet/yolov7.pt --strong-sort-weights osnet_x0_25_msmt17.pt --source out.avi --save-vid --conf-thres 0.15 --device 0
+```
+
+4. Convert the model's result from avi to mp4.
+
+```bash
+!ffmpeg -i /content/Yolov7_StrongSORT_OSNet/runs/track/exp/out.mp4 output.mp4
+```
+
+   The file content is then pushed into a data URL using the following steps:
+```bash
+from IPython.display import HTML
+from base64 import b64encode
+mp4 = open('output.mp4','rb').read()
+data_url = "data:video/mp4;base64," + b64encode(mp4).decode()
+```
+
+   The results are then displayed using HTML using the command mentioned below
+```bash
+HTML("""
+<video controls>
+      <source src="%s" type="video/mp4">
+</video>
+""" % data_url)
+```
+
