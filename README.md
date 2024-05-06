@@ -1,4 +1,4 @@
-# Yolov7 + StrongSORT with OSNet
+3# Yolov7 + StrongSORT with OSNet
 
 
 
@@ -92,6 +92,65 @@ python track.py --source 0 --yolo-weights yolov7.pt --classes 16 17  # tracks ca
 
 [Here](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/) is a list of all the possible objects that a Yolov7 model trained on MS COCO can detect. Notice that the indexing for the classes in this repo starts at zero.
 
+## Implementation Steps
+
+1. Clone the repository, navigate into its directory, install dependencies via `pip` or `requirements.txt`, check PyTorch installation using `import torch`, and verify GPU availability with `torch.cuda.is_available()`.
+
+```bash
+!git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet.git  # clone repo
+%pip install -qr requirements.txt  # install dependencies
+
+import torch
+from IPython.display import Image, clear_output  # to display images
+
+clear_output()
+print(f"Setup complete. Using torch {torch.__version__} ({torch.cuda.get_device_properties(0).name if torch.cuda.is_available() else 'CPU'})")
+```
+
+2. Retrieve the test video from the repository and utilize a video processing library, such as OpenCV, to extract the first 2 seconds of it.
+
+```bash
+%cd /content/Yolov7_StrongSORT_OSNet
+
+# get yolov5m model trained on the crowd-human dataset
+!wget -nc https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt -O /content/Yolov7_StrongSORT_OSNet/yolov7.pt
+
+# get the test video from the repo
+!wget -nc https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet/releases/download/v.2.0/test.avi
+# extract 3 seconds worth of video frames of it
+!yes | ffmpeg -ss 00:00:00 -i test.avi -t 00:00:02 -c copy out.avi
+```
+
+3. Download the test video from the repository, then use OpenCV to extract the initial 2 seconds, saving it to a file due to incompatibility with displaying in a Jupyter notebook, though local viewing with real-time tracking visualization is possible using the --show-vid flag.
+
+```bash
+!python track.py --yolo-weights /content/Yolov7_StrongSORT_OSNet/yolov7.pt --strong-sort-weights osnet_x0_25_msmt17.pt --source out.avi --save-vid --conf-thres 0.15 --device 0
+```
+
+4. Convert the extracted video from avi to mp4.
+
+```bash
+!ffmpeg -i /content/Yolov7_StrongSORT_OSNet/runs/track/exp/out.mp4 output.mp4
+```
+
+5. Get the file content into a data url.
+
+```bash
+from IPython.display import HTML
+from base64 import b64encode
+mp4 = open('output.mp4','rb').read()
+data_url = "data:video/mp4;base64," + b64encode(mp4).decode()
+```
+
+  Display the results with HTML
+
+```bash
+HTML("""
+<video controls>
+      <source src="%s" type="video/mp4">
+</video>
+""" % data_url)
+```
 
 ## MOT compliant results
 
