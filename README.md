@@ -92,7 +92,7 @@ python track.py --source 0 --yolo-weights yolov7.pt --classes 16 17  # tracks ca
 
 [Here](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/) is a list of all the possible objects that a Yolov7 model trained on MS COCO can detect. Notice that the indexing for the classes in this repo starts at zero.
 
-## Implementation Steps
+## Implementation Steps for inference in google colab
 
 1. Clone the repository, navigate into its directory, install dependencies via `pip` or `requirements.txt`, check PyTorch installation using `import torch`, and verify GPU availability with `torch.cuda.is_available()`.
 
@@ -151,6 +151,22 @@ HTML("""
 </video>
 """ % data_url)
 ```
+
+## Replicate the Streamlit Application as shown in the sample output video. 
+# Please note that this replication is done locally to ease the complexity of real time execution
+1. Create a new folder # Clone the repo - git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet.git
+
+2. cd into the cloned folder and install the requirements using # pip install -r requirements.txt
+
+3. Install the weights for yolo. # wget -nc https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt
+
+4. Download a sample video at # wget -nc https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet/releases/download/v.2.0/test.avi
+
+5. Copy a small duration of this sample test video - # yes | ffmpeg -ss 00:00:00 -i test.avi -t 00:00:02 -c copy out.avi
+
+6. Now, run the track.py on this sample video # Yolov7_StrongSORT_OSNet % python track.py --yolo-weights yolov7.pt --strong-sort-weights osnet_x0_25_msmt17.pt --source out.avi --save-vid --conf-thres 0.15
+
+7. Now, download the app.py file in the code and store it inside the current "Yolov7_StrongSORT_OSNet". Then, run the command # streamlit run app.py
 
 ## MOT compliant results
 
