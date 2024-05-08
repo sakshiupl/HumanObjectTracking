@@ -154,19 +154,22 @@ HTML("""
 
 ## Replicate the Streamlit Application as shown in the sample output video. 
 # Please note that this replication is done locally to ease the complexity of real time execution
-1. Create a new folder # Clone the repo - git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet.git
+1. Create a new folder
+```bash
+    Clone the repo - git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet.git
+```
 
-2. cd into the cloned folder and install the requirements using # pip install -r requirements.txt
+3. cd into the cloned folder and install the requirements using # pip install -r requirements.txt
 
-3. Install the weights for yolo. # wget -nc https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt
+4. Install the weights for yolo. # wget -nc https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt
 
-4. Download a sample video at # wget -nc https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet/releases/download/v.2.0/test.avi
+5. Download a sample video at # wget -nc https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet/releases/download/v.2.0/test.avi
 
-5. Copy a small duration of this sample test video - # yes | ffmpeg -ss 00:00:00 -i test.avi -t 00:00:02 -c copy out.avi
+6. Copy a small duration of this sample test video - # yes | ffmpeg -ss 00:00:00 -i test.avi -t 00:00:02 -c copy out.avi
 
-6. Now, run the track.py on this sample video # Yolov7_StrongSORT_OSNet % python track.py --yolo-weights yolov7.pt --strong-sort-weights osnet_x0_25_msmt17.pt --source out.avi --save-vid --conf-thres 0.15
+7. Now, run the track.py on this sample video # Yolov7_StrongSORT_OSNet % python track.py --yolo-weights yolov7.pt --strong-sort-weights osnet_x0_25_msmt17.pt --source out.avi --save-vid --conf-thres 0.15
 
-7. Now, download the app.py file in the code and store it inside the current "Yolov7_StrongSORT_OSNet". Then, run the command # streamlit run app.py
+8. Now, download the app.py file in the code and store it inside the current "Yolov7_StrongSORT_OSNet". Then, run the command # streamlit run app.py
 
 ## MOT compliant results
 
