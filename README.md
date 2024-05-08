@@ -172,35 +172,35 @@ git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSO
 
 ```
 
-4. Install the weights for yolo
+3. Install the weights for yolo
 
 ```bash
  wget -nc https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt
 
 ```
 
-6. Download a sample video using
+4. Download a sample video using
 
 ```bash
     wget -nc https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet/releases/download/v.2.0/test.avi
 
 ```
 
-8. Copy a small duration of this sample test video
+5. Copy a small duration of this sample test video
 
 ```bash
     yes | ffmpeg -ss 00:00:00 -i test.avi -t 00:00:02 -c copy out.avi
 
 ```
 
-10. Now, run the track.py on this sample video
+6. Now, run the track.py on this sample video
 
 ```bash
      Yolov7_StrongSORT_OSNet % python track.py --yolo-weights yolov7.pt --strong-sort-weights osnet_x0_25_msmt17.pt --source out.avi --save-vid --conf-thres 0.15
 
 ```
 
-12. Now, download the app.py file in the code and store it inside the current "Yolov7_StrongSORT_OSNet". Then, run the command
+7. Now, download the app.py file in the code and store it inside the current "Yolov7_StrongSORT_OSNet". Then, run the command
 
 ```bash
      streamlit run app.py
