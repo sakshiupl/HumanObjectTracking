@@ -158,7 +158,11 @@ HTML("""
 
 ```bash
 1. pip install streamlit
-2. 
+2. pip3 install torchvision
+3. brew install pipx
+4. brew install wget
+5. brew install ffmpeg
+6. pipx install moviepy
 ```
 1. Create a new folder and clone the repository
 ```bash
@@ -232,4 +236,3 @@ If you find this project useful in your research, please consider cite:
 ## Contact 
 
 For Yolov7 DeepSort OSNet bugs and feature requests please visit [GitHub Issues](https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet/issues). For business inquiries or professional support requests please send an email to: yolov5.deepsort.pytorch@gmail.com
-# Jai_HOT1
