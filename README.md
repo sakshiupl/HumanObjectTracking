@@ -1,9 +1,5 @@
 # Yolov7 + StrongSORT with OSNet
 
-
-
-
-
 <div align="center">
 <p>
 <img src="TrackingContent/track_pedestrians.gif" width="400"/> <img src="TrackingContent/track_all.gif" width="400"/> 
@@ -14,8 +10,13 @@
  [![CI CPU testing](https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet/actions/workflows/ci-testing.yml/badge.svg)](https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet/actions/workflows/ci-testing.yml)
 </div>
 
+<div align="center">
+<p>
+Implementation DEMO Video URL Link:
+</p>
+<br>  
+<a href="https://www.youtube.com/watch?v=1L0b8l0f18A">Demo URL</a>
 </div>
-
 
 ## Introduction
 
