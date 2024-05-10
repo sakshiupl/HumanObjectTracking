@@ -153,7 +153,7 @@ HTML("""
 ```
 
 # Replicate the Streamlit Application as shown in the sample output video. 
-## Please note that this replication is done locally to ease the complexity of real time execution
+## Please note that this replication is done locally and the commands are for macOS
 
 1. Create a new folder and clone the repository
 ```bash
