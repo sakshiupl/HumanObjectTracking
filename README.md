@@ -154,16 +154,8 @@ HTML("""
 
 ## Replicate the Streamlit Application as shown in the sample output video. 
 # Please note that this replication is done locally to ease the complexity of real time execution
-# You might first want to install these dependencies and requirements 
+# You might first want to install these dependencies and requirements
 
-```bash
-1. pip install streamlit
-2. pip3 install torchvision
-3. brew install pipx
-4. brew install wget
-5. brew install ffmpeg
-6. pipx install moviepy
-```
 1. Create a new folder and clone the repository
 ```bash
 git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet.git
@@ -173,7 +165,16 @@ git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSO
 
 ```bash
  pip install -r requirements.txt
+```
 
+# IMPORTANT: Make sure to install the following packages before proceeding with the next steps
+```bash
+1. brew install pipx
+2. pipx install streamlit
+3. brew install torchvision
+4. brew install wget
+5. brew install ffmpeg
+6. pipx install moviepy -include-deps
 ```
 
 3. Install the weights for yolo
@@ -200,11 +201,16 @@ git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSO
 6. Now, run the track.py on this sample video
 
 ```bash
-     Yolov7_StrongSORT_OSNet % python track.py --yolo-weights yolov7.pt --strong-sort-weights osnet_x0_25_msmt17.pt --source out.avi --save-vid --conf-thres 0.15
-
+    python track.py --yolo-weights yolov7.pt --strong-sort-weights osnet_x0_25_msmt17.pt --source out.avi --save-vid --conf-thres 0.15
 ```
 
-7. Now, download the app.py file in the code and store it inside the current "Yolov7_StrongSORT_OSNet". Then, run the command
+7. Convert the avi file to an mp4
+
+```bash
+   ffmpeg -i /content/Yolov7_StrongSORT_OSNet/runs/track/exp/out.mp4 output.mp4
+````
+
+8. Now, download the app.py file in the code and store it inside the current "Yolov7_StrongSORT_OSNet". Then, run the command
 
 ```bash
      streamlit run app.py
