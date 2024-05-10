@@ -152,9 +152,9 @@ HTML("""
 """ % data_url)
 ```
 
-## Replicate the Streamlit Application as shown in the sample output video. 
-# Please note that this replication is done locally to ease the complexity of real time execution
-# You might first want to install these dependencies and requirements
+# Replicate the Streamlit Application as shown in the sample output video. 
+## Please note that this replication is done locally to ease the complexity of real time execution
+## You might first want to install these dependencies and requirements
 
 1. Create a new folder and clone the repository
 ```bash
@@ -167,7 +167,7 @@ git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSO
  pip install -r requirements.txt
 ```
 
-# IMPORTANT: Make sure to install the following packages before proceeding with the next steps
+## IMPORTANT: Make sure to install the following packages before proceeding with the next steps
 ```bash
 1. brew install pipx
 2. pipx install streamlit
