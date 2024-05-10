@@ -12,9 +12,8 @@
 
 <div align="center">
 <p>
-Implementation DEMO Video URL Link:
+Demo execution in StreamLit:
 </p>
-<br>  
 <a href="https://www.youtube.com/watch?v=1L0b8l0f18A">Demo URL</a>
 </div>
 
