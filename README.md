@@ -14,7 +14,7 @@
 <p>
 Demo execution in StreamLit:
 </p>
-<a href="https://www.youtube.com/watch?v=1L0b8l0f18A">Demo URL</a>
+<a href="https://www.youtube.com/watch?v=1L0b8l0f18A">StreamLit Demo URL</a>
 </div>
 
 ## Introduction
@@ -154,7 +154,6 @@ HTML("""
 
 # Replicate the Streamlit Application as shown in the sample output video. 
 ## Please note that this replication is done locally to ease the complexity of real time execution
-## You might first want to install these dependencies and requirements
 
 1. Create a new folder and clone the repository
 ```bash
