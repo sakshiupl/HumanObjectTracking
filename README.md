@@ -174,7 +174,7 @@ git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSO
 3. brew install torchvision
 4. brew install wget
 5. brew install ffmpeg
-6. pipx install moviepy -include-deps
+6. pip install moviepy
 ```
 
 3. Install the weights for yolo
@@ -204,15 +204,16 @@ python track.py --yolo-weights yolov7.pt --strong-sort-weights osnet_x0_25_msmt1
 7. Convert the avi file to an mp4
 
 ```bash
-ffmpeg -i /content/Yolov7_StrongSORT_OSNet/runs/track/exp/out.mp4 output.mp4
+ffmpeg -i ./runs/track/exp/out.mp4 output.mp4
 ````
 
 8. Now, download the app.py file in the code and store it inside the current "Yolov7_StrongSORT_OSNet". Then, run the command
 
 ```bash
 streamlit run app.py
-
 ```
+
+9. In case of any problems with Real-time tracking, try closing the session and running "streamlit run app.py" again
 
 ## MOT compliant results
 
