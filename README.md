@@ -159,6 +159,7 @@ HTML("""
 ```bash
 git clone --recurse-submodules https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet.git
 ```
+   Make sure to cd into the directory
 
 2. cd into the cloned folder and install the requirements using
 
